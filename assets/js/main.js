@@ -1,3 +1,47 @@
+/* Loading */
+const loadingText = "Loading, please wait...";
+const loadingElement = document.getElementById('loadingText');
+const loadingScreen = document.getElementById('loadingScreen');
+const content = document.getElementById('content');
+
+let index = 0;
+let isTyping = true;
+
+function typeWriter() {
+    if (isTyping) {
+        if (index < loadingText.length) {
+            loadingElement.innerHTML += loadingText.charAt(index);
+            index++;
+            setTimeout(typeWriter, 50); // Typing speed
+        } else {
+            isTyping = false; // Start backspacing
+            setTimeout(typeWriter, 500); // Wait before backspacing
+        }
+    } else {
+        if (index > 0) {
+            loadingElement.innerHTML = loadingText.substring(0, index - 1);
+            index--;
+            setTimeout(typeWriter, 50); // Backspacing speed
+        } else {
+            isTyping = true; // Start typing again
+            setTimeout(typeWriter, 500); // Wait before typing again
+        }
+    }
+}
+
+window.onload = function() {
+    typeWriter();
+    setTimeout(() => {
+        loadingScreen.style.opacity = '0'; // Start fade out
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+            content.style.display = 'block';
+        }, 1000); // Wait for fade out to complete
+    }, 2000); // Total duration for loading
+};
+
+
+
 /* ----- NAVIGATION BAR FUNCTION ----- */
     function myMenuFunction(){
       var menuBtn = document.getElementById("myNavMenu");
@@ -135,3 +179,6 @@
     
     
   }
+
+  
+  
