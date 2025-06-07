@@ -651,3 +651,94 @@ footer{
         width: 100%;
     }
 }
+/* new update */
+
+ .hanging-miku {
+        display: block;
+        margin: 20px auto; /* Center the image */
+        width: 400px; /* Adjust the size as needed */
+        position: relative;
+        top: -20px; /* Adjust this value to make it look like it's hanging */
+
+    }
+    .new-skills-list .about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for animation */
+}
+
+.new-skills-list.profile {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.new-skills-list.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ff6f61; /* Accent color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.new-skills-list .info {
+    flex: 2;
+    padding: 20px;
+}
+
+.new-skills-list h1 {
+    font-size: 2.5em;
+    color: #333;
+    animation: fadeIn 1s ease forwards; /* Animation for heading */
+}
+
+.new-skills-list .tagline {
+    font-style: italic;
+    color: #777;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s; /* Delay for tagline */
+}
+
+.new-skills-list p {
+    line-height: 1.6;
+    color: #555;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s; /* Delay for paragraph */
+}
+
+.new-skills-list h2 {
+    margin-top: 20px;
+    color: #ff6f61; /* Accent color */
+}
+
+.new-skills-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.new-skills-list li {
+    background: #e7e7e7;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

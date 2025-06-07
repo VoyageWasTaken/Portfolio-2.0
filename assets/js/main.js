@@ -160,25 +160,16 @@ window.onload = function() {
 
   window.addEventListener('scroll', scrollActive)
 
-  //email sender____---------------------------------------------------
-
-  function sendEmail(){
-    const templateParams = {
-      name: document.querySelector("#name").value,
-      email: document.querySelector("#email").value,
-      message: document.querySelector("#message").value,
-
-    } ;
-     
-   
-    emailjs.send("service_doxrcrl", "template_7s11hmp", templateParams).then(
-      () => 
-      alert("Email sent successfully!").catch(()=>alert("Email not send"))
-    );
-
+ // FOR ABOUT
+  document.addEventListener("DOMContentLoaded", function() {
+    const aboutMeSection = document.getElementById('aboutMe');
     
-    
-  }
-
+    // Trigger the animation by changing opacity and transform
+    setTimeout(() => {
+        aboutMeSection.style.opacity = 1;
+        aboutMeSection.style.transform = 'translateY(0)';
+    }, 100); // Delay to allow for DOM content to load
+});
+ 
   
   
